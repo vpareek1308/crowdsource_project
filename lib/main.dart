@@ -1,22 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:croudsource_project/screens/login.dart';
+import 'package:croudsource_project/screens/home.dart';
 
 void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text(
-            "IITJ Crowdsourcing Project",
-            textAlign: TextAlign.center,
-          ),
-        ),
-      ),
-    );
-  }
+  runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+    initialRoute: '/login',
+    routes: {
+      '/login':(context) => Login(),
+      '/home':(context) => Home(),
+    },
+  ));
 }
