@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../widgets/CarouselWithIndicator.dart';
 
 class Home extends StatelessWidget {
   @override
@@ -17,10 +18,21 @@ class Home extends StatelessWidget {
           actionsIconTheme:
               IconThemeData(size: 40.0, color: Colors.white, opacity: 10.0),
         ),
+        // floatingActionButton: FloatingActionButton(
+        //   child: Text("Login"),
+        //   onPressed: () {
+        //     Navigator.pushNamed(context, '/login');
+        //   },
+        // ),
+        body: CarouselWithIndicator(),
         floatingActionButton: FloatingActionButton(
-          child: Text("Login"),
+          child: Icon(
+            Icons.add,
+            size: 35,
+          ),
           onPressed: () {
             Navigator.pushNamed(context, '/login');
+            // TODO:add observation
           },
         ),
       ),
