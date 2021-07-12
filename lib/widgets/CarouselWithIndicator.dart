@@ -65,8 +65,8 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicator> {
             imgList,
             (index, i) {
               return Container(
-                width: screenWidth - 84,
-                margin: EdgeInsets.all(5.0),
+                width: screenWidth,
+                // margin: EdgeInsets.all(5.0),
                 child: ClipRRect(
                   borderRadius: BorderRadius.all(
                     Radius.circular(8.0),
@@ -77,7 +77,7 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicator> {
                         i,
                         fit: BoxFit.cover,
                         /*Giving width and height to the image so that it will cover*/
-                        width: screenWidth - 84,
+                        width: screenWidth,
                         height: orientation == Orientation.portrait
                             ? screenHeight / 2
                             : screenWidth / 2,
