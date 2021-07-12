@@ -1,20 +1,18 @@
 import 'package:flutter/material.dart';
 
-class Home extends StatelessWidget {
+class ImageUpload extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
     return Container(
       child: Scaffold(
         appBar: AppBar(
-          title: Text("Home Page"),
+          title: Text("Upload Image"),
           centerTitle: true,
         ),
         floatingActionButton: FloatingActionButton(
-          child: Text("+"),
-          onPressed: () {
-            Navigator.pushNamed(context, '/image_upload');
-          },
+          onPressed: () {},
+          child: Icon(Icons.camera_alt),
         ),
       ),
     );

@@ -18,7 +18,7 @@ class Login extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.fromLTRB(40, 10, 40, 10),
                 child: TextField(
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
@@ -31,7 +31,7 @@ class Login extends StatelessWidget {
                 height: 20,
               ),
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.fromLTRB(40, 10, 40, 10),
                 child: TextField(
                   obscureText: true,
                   decoration: InputDecoration(
