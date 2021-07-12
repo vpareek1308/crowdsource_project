@@ -48,7 +48,7 @@ class _ImageUploadState extends State<ImageUpload> {
         body: Column(
           children: [
             SizedBox(
-              height: 50,
+              height: 20,
             ),
             Center(
               child: Container(
