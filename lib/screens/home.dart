@@ -18,13 +18,15 @@ class Home extends StatelessWidget {
           actionsIconTheme:
               IconThemeData(size: 40.0, color: Colors.white, opacity: 10.0),
         ),
-        // floatingActionButton: FloatingActionButton(
-        //   child: Text("Login"),
-        //   onPressed: () {
-        //     Navigator.pushNamed(context, '/login');
-        //   },
-        // ),
-        body: CarouselWithIndicator(),
+        body: Column(
+          children: [
+            CarouselWithIndicator(),
+            Image.asset(
+              'lib/assets/images/quote.jpg',
+              width: 450,
+            ),
+          ],
+        ),
         floatingActionButton: FloatingActionButton(
           child: Icon(
             Icons.add,
@@ -32,7 +34,6 @@ class Home extends StatelessWidget {
           ),
           onPressed: () {
             Navigator.pushNamed(context, '/image_upload');
-            // TODO:add observation
           },
         ),
       ),
