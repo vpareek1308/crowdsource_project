@@ -31,7 +31,7 @@ class Home extends StatelessWidget {
             size: 35,
           ),
           onPressed: () {
-            Navigator.pushNamed(context, '/login');
+            Navigator.pushNamed(context, '/image_upload');
             // TODO:add observation
           },
         ),
