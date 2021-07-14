@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import '../widgets/CarouselWithIndicator.dart';
+import '../widgets/NavigationDrawerWidget.dart';
 
 class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
       child: Scaffold(
+        drawer: NavigationDrawerWidget('Sarah', 'sarah@gmail.com',
+            'https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'),
         appBar: AppBar(
           title: Text("Home Page"),
           centerTitle: true,
