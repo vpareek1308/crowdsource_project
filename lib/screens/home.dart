@@ -1,8 +1,13 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import '../widgets/CarouselWithIndicator.dart';
 import '../widgets/NavigationDrawerWidget.dart';
 
 class Home extends StatelessWidget {
+  late UserCredential user;
+
+  Home(this.user);
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -43,6 +48,14 @@ class Home extends StatelessWidget {
               child: Text("My Contributions"),
               onPressed: () =>
                   Navigator.pushNamed(context, '/my_contributions'),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            ElevatedButton(
+              child: Text("User Data"),
+              onPressed: () =>
+                  print(user),
             ),
           ],
         ),

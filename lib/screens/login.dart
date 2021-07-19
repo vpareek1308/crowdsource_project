@@ -1,6 +1,30 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-class Login extends StatelessWidget {
+import '../authentication.dart';
+import 'home.dart';
+
+class Login extends StatefulWidget {
+  @override
+  _LoginState createState() => _LoginState();
+}
+
+class _LoginState extends State<Login> {
+  late UserCredential user;
+
+  @override
+  void initState() {
+    super.initState();
+    signOut();
+  }
+
+  void click() {
+    signInWithGoogle().then((user) => {
+      this.user = user,
+      Navigator.push(context,
+          MaterialPageRoute(builder: (context) => Home(user)))
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -11,56 +35,27 @@ class Login extends StatelessWidget {
           centerTitle: true,
         ),
         backgroundColor: Colors.white,
-        body: Container(
-          color: Colors.blue[10],
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Padding(
-                padding: const EdgeInsets.fromLTRB(40, 10, 40, 10),
-                child: TextField(
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: 'Email',
-                    hintText: 'Enter Valid Email Id',
+        body: Center(
+          child: Padding(
+            padding: const EdgeInsets.all(50),
+            child: ElevatedButton(
+              onPressed: this.click,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    'lib/assets/images/google_logo.png',
+                    width: 20,
                   ),
-                ),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(40, 10, 40, 10),
-                child: TextField(
-                  obscureText: true,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: 'Password',
-                    hintText: 'Enter Password',
+                  SizedBox(
+                    width: 10,
                   ),
-                ),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              TextButton(
-                onPressed: () {},
-                child: Text(
-                  "Forgot Password",
-                  style: TextStyle(
-                    color: Colors.blue,
+                  Text(
+                    "Sign in with Google",
                   ),
-                ),
+                ],
               ),
-              SizedBox(
-                height: 10,
-              ),
-              ElevatedButton(
-                onPressed: () => Navigator.pushNamed(context, '/home'),
-                child: Text('Login'),
-              )
-            ],
+            ),
           ),
         ),
       ),
