@@ -24,17 +24,25 @@ class Home extends StatelessWidget {
         body: Column(
           children: [
             CarouselWithIndicator(),
-            Image.asset(
-              'lib/assets/images/quote.jpg',
-              width: 450,
-            ),
+            // Image.asset(
+            //   'lib/assets/images/quote.jpg',
+            //   width: 450,
+            // ),
             SizedBox(
-              height: 15,
+              height: 20,
             ),
             ElevatedButton(
               child: Text("All Contributions"),
               onPressed: () =>
                   Navigator.pushNamed(context, '/all_contributions'),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            ElevatedButton(
+              child: Text("My Contributions"),
+              onPressed: () =>
+                  Navigator.pushNamed(context, '/my_contributions'),
             ),
           ],
         ),
