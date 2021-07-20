@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "98182700075",
+    "project_id": "crowdsource-project-iitj",
+    "storage_bucket": "crowdsource-project-iitj.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:98182700075:android:8ed76d24357a702b615e6e",
+        "android_client_info": {
+          "package_name": "com.example.croudsource_project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "98182700075-mn382skte80c5jflcq524tpi2e0d99ue.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.croudsource_project",
+            "certificate_hash": "545b1c3212cc8c983a20b645af3287671e45708c"
+          }
+        },
+        {
+          "client_id": "98182700075-2a43hon6lt6akkvjmf5bluq07419abtu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDcPYms9Mkrvy_XQCumQgAUpQTDb0xnxTA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "98182700075-2a43hon6lt6akkvjmf5bluq07419abtu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

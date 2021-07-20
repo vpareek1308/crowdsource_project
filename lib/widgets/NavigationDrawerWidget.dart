@@ -1,4 +1,7 @@
+import 'package:croudsource_project/screens/login.dart';
 import 'package:flutter/material.dart';
+
+import '../authentication.dart';
 
 class NavigationDrawerWidget extends StatelessWidget {
   final padding = 20.0;
@@ -89,7 +92,11 @@ class NavigationDrawerWidget extends StatelessWidget {
                   buildMenuItem(
                     text: 'Sign out',
                     icon: Icons.phonelink_erase,
-                    onClicked: () => navigate(context, 'Sign out'),
+                    // onClicked: () => navigate(context, 'Sign out'),
+                    onClicked: () => {
+                      signOut(),
+                      Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => Login()), (Route<dynamic> route) => false)
+                    }
                   ),
                 ],
               ),
@@ -124,30 +131,29 @@ class NavigationDrawerWidget extends StatelessWidget {
         child: Container(
           padding: EdgeInsets.only(
               left: padding / 2, right: padding / 2, top: padding),
-          child: Row(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              CircleAvatar(
-                radius: 40,
-                backgroundImage: NetworkImage(imgURL),
+              Align(
+                alignment: Alignment.topCenter,
+                child: CircleAvatar(
+                  radius: 40,
+                  backgroundImage: NetworkImage(imgURL),
+                ),
               ),
               SizedBox(
-                width: 30,
+                height: 30,
               ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    name,
-                    style: TextStyle(fontSize: 20, color: Colors.white),
-                  ),
-                  const SizedBox(
-                    height: 4,
-                  ),
-                  Text(
-                    email,
-                    style: TextStyle(fontSize: 20, color: Colors.white),
-                  )
-                ],
+              Text(
+                name,
+                style: TextStyle(fontSize: 20, color: Colors.white),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Text(
+                email,
+                style: TextStyle(fontSize: 20, color: Colors.white),
               )
             ],
           ),
