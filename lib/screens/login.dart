@@ -21,8 +21,7 @@ class _LoginState extends State<Login> {
   void click() {
     signInWithGoogle().then((user) => {
       this.user = user,
-      Navigator.push(context,
-          MaterialPageRoute(builder: (context) => Home(user)))
+      Navigator.push(context, MaterialPageRoute(builder: (context) => Home(user)))
     });
   }
 

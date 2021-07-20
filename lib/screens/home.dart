@@ -1,3 +1,5 @@
+import 'package:croudsource_project/screens/all_contributions.dart';
+import 'package:croudsource_project/screens/my_contributions.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import '../widgets/CarouselWithIndicator.dart';
@@ -12,8 +14,8 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: Scaffold(
-        drawer: NavigationDrawerWidget('Sarah', 'sarah@gmail.com',
-            'https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'),
+        drawer: NavigationDrawerWidget(user.user!.displayName.toString(), user.user!.email.toString(),
+            user.user!.photoURL.toString(),),
         appBar: AppBar(
           title: Text("Home Page"),
           centerTitle: true,
@@ -39,7 +41,7 @@ class Home extends StatelessWidget {
             ElevatedButton(
               child: Text("All Contributions"),
               onPressed: () =>
-                  Navigator.pushNamed(context, '/all_contributions'),
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => AllContributions(user)))
             ),
             SizedBox(
               height: 20,
@@ -47,7 +49,7 @@ class Home extends StatelessWidget {
             ElevatedButton(
               child: Text("My Contributions"),
               onPressed: () =>
-                  Navigator.pushNamed(context, '/my_contributions'),
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => MyContributions(user)))
             ),
             SizedBox(
               height: 20,
@@ -55,7 +57,7 @@ class Home extends StatelessWidget {
             ElevatedButton(
               child: Text("User Data"),
               onPressed: () =>
-                  print(user),
+                  print(user.user!.displayName),
             ),
           ],
         ),
